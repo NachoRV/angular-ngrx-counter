@@ -3,7 +3,7 @@ import { Store, Action } from '@ngrx/store';
 7
 import { AppState } from '../redux/app.state';
 // import { counterReducer } from '../redux/cunter/counter.reducer';
-import { INCREMENT } from '../redux/cunter/counter.actions';
+import { INCREMENT, DECREMENT } from '../redux/cunter/counter.actions';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +27,12 @@ export class AppComponent {
     const action: Action = {
       type: INCREMENT
     }
-    this.store.dispatch(action)
+    this.store.dispatch(action);
+  }
+  decrement() {
+    const action: Action = {
+      type: DECREMENT
+    }
+    this.store.dispatch(action);
   }
 }
